@@ -39,6 +39,16 @@ in
   ];
   format = "yaml";
   data = {
+    pre-push = {
+      commands = {
+        conform = {
+          run = ''
+            ${l.getExe nixpkgs.conform} enforce
+          '';
+          skip = [ "merge" "rebase" ];
+        };
+      };
+    };
     commit-msg = {
       commands = {
         conform = {
