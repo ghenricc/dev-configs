@@ -138,6 +138,26 @@ in
       has_wiki = false;
       has_downloads = false;
     };
+
+    branches = [
+      {
+        name = "main";
+        protection = {
+          required_pull_request_reviews = {
+            required_approving_review_count = 1;
+            dismiss_stale_reviews = true;
+            require_code_owner_reviews = true;
+          };
+          required_status_checks = {
+            strict = true;
+            contexts = [ ];
+          };
+          enforce_admins = false;
+          required_linear_history = true;
+        };
+      }
+    ];
+
     labels =
       [ ]
       ++ (l.attrValues labels.statuses)
