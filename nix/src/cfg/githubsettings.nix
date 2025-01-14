@@ -26,98 +26,98 @@ let
   labels = {
     statuses = {
       abandoned = {
-        name = ":running: Status: Abdandoned";
+        name = "Status: Abdandoned :skull:";
         description = "This issue has been abdandoned";
         color = colors.black;
       };
       accepted = {
-        name = ":ok: Status: Accepted";
+        name = "Status: Accepted :heavy_check_mark:";
         description = "This issue has been accepted";
         color = colors.green;
       };
       blocked = {
-        name = ":x: Status: Blocked";
+        name = "Status: Blocked :x:";
         description = "This issue is in a blocking state";
         color = colors.red;
       };
       inProgress = {
-        name = ":construction: Status: In Progress";
+        name = "Status: In Progress :construction:";
         description = "This issue is actively being worked on";
         color = colors.grey;
       };
       onHold = {
-        name = ":golf: Status: On Hold";
+        name = "Status: On Hold :hourglass_flowing_sand:";
         description = "This issue is not currently being worked on";
         color = colors.red;
       };
       reviewNeeded = {
-        name = ":eyes: Status: Review Needed";
+        name = "Status: Review Needed :eyes:";
         description = "This issue is pending a review";
         color = colors.gold;
       };
     };
     types = {
       bug = {
-        name = ":bug: Type: Bug";
+        name = "Type: Bug :bug:";
         description = "This issue targets a bug";
         color = colors.red;
       };
       story = {
-        name = ":scroll: Type: Story";
+        name = "Type: Story :scroll:";
         description = "This issue targets a new feature through a story";
         color = colors.lightBlue;
       };
       maintenance = {
-        name = ":wrench: Type: Maintenance";
+        name = "Type: Maintenance :wrench:";
         description = "This issue targets general maintenance";
         color = colors.orange;
       };
       question = {
-        name = ":grey_question: Type: Question";
+        name = "Type: Question :grey_question:";
         description = "This issue contains a question";
         color = colors.purple;
       };
       security = {
-        name = ":cop: Type: Security";
+        name = "Type: Security :cop:";
         description = "This issue targets a security vulnerability";
         color = colors.red;
       };
     };
     priorities = {
       critical = {
-        name = ":boom: Priority: Critical";
+        name = "Priority: 0 - Critical :zero:";
         description = "This issue is prioritized as critical";
         color = colors.red;
       };
       high = {
-        name = ":fire: Priority: High";
+        name = "Priority: 1 - High :one:";
         description = "This issue is prioritized as high";
         color = colors.orange;
       };
       medium = {
-        name = ":star2: Priority: Medium";
+        name = "Priority: 2 - Medium :two:";
         description = "This issue is prioritized as medium";
         color = colors.yellow;
       };
       low = {
-        name = ":low_brightness: Priority: Low";
+        name = "Priority: 3 - Low :three:";
         description = "This issue is prioritized as low";
         color = colors.green;
       };
     };
     effort = {
       "1" = {
-        name = ":muscle: Effort: 1";
+        name = "Effort: 1 :muscle:";
         description = "This issue is of low complexity or very well understood";
         color = colors.green;
       };
       "2" = {
-        name = ":muscle: Effort: 3";
+        name = "Effort: 3 :muscle:";
         description = "This issue is of medium complexity or only partly well understood";
         color = colors.yellow;
       };
       "5" = {
-        name = ":muscle: Effort: 5";
+        name = "Effort: 5 :muscle:";
         description = "This issue is of high complexity or just not yet well understood";
         color = colors.red;
       };
