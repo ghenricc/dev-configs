@@ -35,6 +35,7 @@ builtins.mapAttrs (_: lib.dev.mkShell) {
       cell.configs.editorconfig
       cell.configs.githubsettings
       cell.configs.lefthook
+      cell.configs.typos
       cell.configs.treefmt
     ];
 
