@@ -24,6 +24,8 @@ in
 
   treefmt = mkNixago cfg.treefmt;
 
+  typos = mkNixago cfg.typos;
+
   githubsettings = mkNixago cfg.githubsettings {
     data.repository = {
       name = "dev-configs";
