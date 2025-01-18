@@ -77,7 +77,7 @@ in
     pre-commit = {
       commands = {
         treefmt = {
-          run = "${l.getExe nixpkgs.treefmt} --fail-on-change {staged_files}";
+          run = "${l.getExe nixpkgs.treefmt} --ci --on-unmatched fatal {staged_files}";
           skip = [ "merge" "rebase" ];
         };
         typos = {
