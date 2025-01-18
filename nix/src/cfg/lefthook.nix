@@ -47,6 +47,18 @@ in
           '';
           skip = [ "merge" "rebase" ];
         };
+        reuse = {
+          run = "${l.getExe nixpkgs.reuse} lint";
+          skip = [ "merge" "rebase" ];
+        };
+        flake-checker = {
+          run = "${l.getExe nixpkgs.flake-checker} --fail-mode";
+          skip = [ "merge" "rebase" ];
+        };
+        std = {
+          run = "${l.getExe inputs.std.packages.std} check";
+          skip = [ "merge" "rebase" ];
+        };
       };
     };
     commit-msg = {
@@ -67,12 +79,8 @@ in
           run = "${l.getExe nixpkgs.treefmt} --fail-on-change {staged_files}";
           skip = [ "merge" "rebase" ];
         };
-        reuse = {
-          run = "${l.getExe nixpkgs.reuse} lint";
-          skip = [ "merge" "rebase" ];
-        };
         typos = {
-          run = "${l.getExe nixpkgs.typos} --locale 'en-us' --no-unicode {staged_files}";
+          run = "${l.getExe nixpkgs.typos} {staged_files}";
           skip = [ "merge" "rebase" ];
         };
         # TODO Cause warnings to error, once merged https://github.com/oxalica/nil/pull/157
@@ -91,14 +99,6 @@ in
             exit $EXIT
           '';
           glob = "*.nix";
-          skip = [ "merge" "rebase" ];
-        };
-        flake-checker = {
-          run = "${l.getExe nixpkgs.flake-checker}";
-          skip = [ "merge" "rebase" ];
-        };
-        std = {
-          run = "${l.getExe inputs.std.packages.std} check";
           skip = [ "merge" "rebase" ];
         };
       };

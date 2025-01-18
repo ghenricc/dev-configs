@@ -2,12 +2,23 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
+# Config Reference: https://github.com/crate-ci/typos/blob/master/docs/reference.md
 let
   inherit (inputs) nixpkgs;
   l = nixpkgs.lib // builtins;
 in
 {
-  data = { };
+  data = {
+    default = {
+      locale = "en-us";
+      extend-ignore-re = [
+        # Disable spellcheck on a line with `# spellchecker:disable-line`:
+        "(?Rm)^.*(#|//)\\s*spellchecker:disable-line$"
+        # Line block with `# spellchecker:<on|off>`:
+        "(?s)(#|//)\\s*spellchecker:off.*?\\n\\s*(#|//)\\s*spellchecker:on"
+      ];
+    };
+  };
   output = "typos.toml";
   commands = [
     {

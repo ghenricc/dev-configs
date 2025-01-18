@@ -9,6 +9,7 @@
 let
   inherit (inputs.std.lib.dev) mkNixago;
   inherit (inputs.cells.src) cfg;
+  repository = "dev-configs";
 in
 {
   lefthook = mkNixago cfg.lefthook {
@@ -18,21 +19,35 @@ in
 
   conform = mkNixago cfg.conform;
 
-  cog = mkNixago cfg.cog;
-
   editorconfig = mkNixago cfg.editorconfig;
 
   treefmt = mkNixago cfg.treefmt;
 
   typos = mkNixago cfg.typos;
 
-  githubsettings = mkNixago cfg.githubsettings {
-    data.repository = {
-      name = "dev-configs";
-      inherit (import (inputs.self + /flake.nix)) description;
-      homepage = "";
-      topics = "nix nix-flakes devshells";
-      private = false;
+  cog = mkNixago cfg.cog {
+    data = {
+      inherit repository;
+      remote = "github.com";
+      owner = "ghenricc";
+      authors = [
+        {
+          signature = "Carson Henrich";
+          username = "ghenricc";
+        }
+      ];
     };
   };
+
+  githubsettings = mkNixago
+    cfg.githubsettings
+    {
+      data.repository = {
+        name = repository;
+        inherit (import (inputs.self + /flake.nix)) description;
+        homepage = "";
+        topics = "nix nix-flakes devshells";
+        private = false;
+      };
+    };
 }
