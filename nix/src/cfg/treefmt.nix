@@ -7,8 +7,7 @@
 
 # Source 1: https://github.com/divnix/std/blob/e2b20a91d37989f85d6852ebf3f55b4b9dff3cfb/src/lib/cfg/treefmt.nix
 # Source 2: https://github.com/divnix/std/blob/e2b20a91d37989f85d6852ebf3f55b4b9dff3cfb/src/data/configs/treefmt.nix
-# Tool Homepage: https://github.com/numtide/treefmt
-# Configuration Reference: https://treefmt.com/latest/getting-started/configure/#ci 
+# Config Reference: https://treefmt.com/latest/getting-started/configure/#ci 
 
 let
   inherit (inputs) nixpkgs;

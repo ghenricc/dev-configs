@@ -7,6 +7,7 @@
 
 # Source 1: https://github.com/divnix/std/blob/e2b20a91d37989f85d6852ebf3f55b4b9dff3cfb/src/lib/cfg/githubsettings.nix
 # Source 2: https://github.com/divnix/std/blob/e2b20a91d37989f85d6852ebf3f55b4b9dff3cfb/src/data/configs/githubsettings.nix
+# Config Reference: https://github.com/github/safe-settings/blob/main-enterprise/docs/sample-settings/settings.yml
 let
   inherit (inputs) nixpkgs;
   l = nixpkgs.lib // builtins;

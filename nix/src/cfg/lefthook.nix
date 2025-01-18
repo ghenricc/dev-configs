@@ -7,6 +7,7 @@
 
 # Source 1: https://github.com/divnix/std/blob/e2b20a91d37989f85d6852ebf3f55b4b9dff3cfb/src/lib/cfg/lefthook.nix
 # Source 2: https://github.com/divnix/std/blob/e2b20a91d37989f85d6852ebf3f55b4b9dff3cfb/src/data/configs/lefthook.nix
+# Config Reference: https://evilmartians.github.io/lefthook/configuration/index.html
 let
   inherit (inputs) nixpkgs;
   l = nixpkgs.lib // builtins;

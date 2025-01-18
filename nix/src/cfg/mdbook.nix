@@ -7,8 +7,7 @@
 
 # Source 1: https://github.com/divnix/std/blob/e2b20a91d37989f85d6852ebf3f55b4b9dff3cfb/src/lib/cfg/mdbook.nix
 # Source 2: https://github.com/divnix/std/blob/e2b20a91d37989f85d6852ebf3f55b4b9dff3cfb/src/data/configs/mdbook.nix
-
-# TODO Remove this File
+# Config Reference: https://rust-lang.github.io/mdBook/format/configuration/index.html
 let
   inherit (inputs) nixpkgs;
   inherit (inputs.mdbook-paisano-preprocessor.app.package) mdbook-paisano-preprocessor;
