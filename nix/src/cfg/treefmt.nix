@@ -26,6 +26,7 @@ in
 
   data = {
     excludes = [
+      "CHANGELOG.md"
       "cog.toml"
       "lefthook.yml"
       "treefmt.toml"

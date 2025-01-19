@@ -15,7 +15,7 @@ in
 {
   data = {
     commit = {
-      body.required = true;
+      body.required = false;
       spellcheck.locale = "US";
       header = {
         length = 89;
@@ -37,9 +37,7 @@ in
           "style"
           "test"
         ];
-        scopes = [
-          "version" # Used by cocogitto for version bumps
-        ] ++ (l.subtractLists l.systems.doubles.all (l.attrNames inputs.cells));
+        scopes = [ ] ++ (l.subtractLists l.systems.doubles.all (l.attrNames inputs.cells));
       };
     };
   };
