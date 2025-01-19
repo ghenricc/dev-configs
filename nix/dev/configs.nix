@@ -17,7 +17,7 @@ in
   # Base Config: ../src/cfg/cog.nix 
   # Config Reference: https://docs.cocogitto.io/reference/config.html
   cog = mkNixago cfg.cog {
-    data = {
+    data.changelog = {
       inherit repository;
       remote = "github.com";
       owner = "ghenricc";
@@ -29,7 +29,6 @@ in
       ];
     };
   };
-
 
   # Base Config: ../src/cfg/conform.nix 
   # Config Reference: https://github.com/siderolabs/conform?tab=readme-ov-file

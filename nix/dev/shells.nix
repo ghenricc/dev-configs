@@ -35,8 +35,8 @@ builtins.mapAttrs (_: lib.dev.mkShell) {
       cell.configs.editorconfig
       cell.configs.githubsettings
       cell.configs.lefthook
-      cell.configs.typos
       cell.configs.treefmt
+      cell.configs.typos
     ];
 
     env = lib.mapAttrsToList pairToAttrs {
@@ -48,29 +48,20 @@ builtins.mapAttrs (_: lib.dev.mkShell) {
     ];
 
     commands = lib.mapAttrsToList pairToAttrs {
-      checks = {
+      reuse = rec {
         category = "checks";
-        help = "Runs all defined pre-commit checks for this repository";
-        command = ''
-          lefthook run pre-commit
-          conform enforce
-          nix flake check
-        '';
-      };
-      reuse = {
-        category = "checks";
-        help = "Make licensing easy for humans and machines alike.";
         package = nixpkgs.reuse;
+        help = package.meta.description;
       };
-      conform = {
+      conform = rec {
         category = "checks";
-        help = "Policy enforcement for your pipelines.";
         package = nixpkgs.conform;
+        help = package.meta.description;
       };
-      nil = {
+      nil = rec {
         category = "checks";
-        help = "Nix Language server, an incremental analysis assistant for writing in Nix.";
         package = nixpkgs.nil;
+        help = package.meta.description;
       };
     };
   };
