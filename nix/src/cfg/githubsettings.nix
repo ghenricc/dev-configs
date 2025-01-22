@@ -153,6 +153,7 @@ in
             strict = true;
             contexts = [ ];
           };
+          restrictions = null;
           enforce_admins = false;
           required_linear_history = true;
         };
