@@ -39,7 +39,7 @@ in
         ];
         scopes = [
           "version" # Used by cocogitto for version bumps
-        ] ++ (l.subtractLists l.systems.doubles.all (l.attrNames inputs.cells));
+        ];
       };
     };
   };

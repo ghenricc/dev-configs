@@ -33,16 +33,19 @@ in
   # Base Config: ../src/cfg/conform.nix 
   # Config Reference: https://github.com/siderolabs/conform?tab=readme-ov-file
   conform = mkNixago cfg.conform {
-    data.commit.conventional.scopes = dmerge.append [
-      "cog"
-      "conform"
-      "editorconfig"
-      "githubsettings"
-      "lefthook"
-      "mdbook"
-      "treefmt"
-      "typos"
-    ];
+    data = {
+      inherit (inputs) cells;
+      commit.conventional.scopes = dmerge.append [
+        "cog"
+        "conform"
+        "editorconfig"
+        "githubsettings"
+        "lefthook"
+        "mdbook"
+        "treefmt"
+        "typos"
+      ];
+    };
   };
 
   # Base Config: ../src/cfg/editorconfig.nix 
